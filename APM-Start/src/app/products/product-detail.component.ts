@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product: IProduct;
-  _listFilter: string;
+  _listFilter: number;
   filteredProducts: IProduct[];
   products: IProduct[] = [];
   errorMessage: string = '';
@@ -30,27 +30,25 @@ export class ProductDetailComponent implements OnInit {
       next: products => {
         this.products = products;
         this.filteredProducts = this.products;
-        this.listFilter = 'Ham';
+        this.listFilter = id;
         this.product = this.performFilter(this.listFilter)[0];
       },
       error: err => this.errorMessage = err
     });
   }
 
-  get listFilter(): string {
+  get listFilter(): number {
     return this._listFilter;
   }
 
-  set listFilter(value: string) {
+  set listFilter(value: number) {
     this._listFilter = value;
     this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
-  performFilter(filterBy: string): IProduct[] {
-    filterBy = filterBy.toLocaleLowerCase();
+  performFilter(id: number): IProduct[] {
     return this.products.filter((product: IProduct) =>
-      product.productName.toLocaleLowerCase()
-        .indexOf(filterBy) !== -1);
+      product.productId === id);
   }
 
   onBack(): void {

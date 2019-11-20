@@ -1,24 +1,90 @@
 <div class="card"
      *ngIf='product'>
     <div class="card-header">
-        {{pageTitle + ': ' + product.productName}}
+        <div class='row'>
+            <div class='col'>{{product.productName}} </div>
+            <div class='col'>
+                <button class='btn btn-outline-secondary'
+                        (click)='onBack()'
+                        style='width:80px'>
+                    <li class='fa fa-chevron-left'>
+                        Back
+                    </li>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <div class='card-body'>
     <div class='row'>
         <div class='col-md-8'>
             <div class='row'>
-                {{product.productName}}
+                <div class='col'>Product Name: </div>
+                <div class='col'>{{product.productName}}</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <div class='col'>Product Code: </div>
+                <div class='col'>{{product.productCode}}</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <div class='col'>Release Date: </div>
+                <div class='col'>{{product.releaseDate}}</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <div class='col'>Description: </div>
+                <div class='col'>{{product.description}}</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <div class='col'>Product Price: </div>
+                <div class='col'>{{product.price}}</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <div class='col'>5-Star Rating</div>
+                <div class='col'>{{product.starRating}}/5</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-8'>
+            <div class='row'>
+                <img class='productImage'
+                     src={{product.imageUrl}} />
             </div>
         </div>
     </div>
 </div>
+
 <div class="card-footer">
-    <button class='btn btn-outline-secondary'
-            (click)='onBack()'
-            style='width:80px'>
-        <li class='fa fa-chevron-left'>
-            Back
-        </li>
-    </button>
+    <div class='row'>
+        <div class='col'>&nbsp;</div>
+        <div class='col'>
+            <button class='btn btn-outline-secondary'
+                    (click)='onBack()'
+                    style='width:80px'>
+                <li class='fa fa-chevron-left'>
+                    Back
+                </li>
+            </button>
+        </div>
+    </div>
 </div>
