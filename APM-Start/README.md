@@ -1,4 +1,5 @@
 # APM
+This project comes from Deborah Kurata's Pluralsight course 'Angular Getting Started'. The official codebase is [here]:(https://github.com/DeborahK/Angular-GettingStarted)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
